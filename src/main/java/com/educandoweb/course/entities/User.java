@@ -4,6 +4,8 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -26,6 +28,7 @@ public class User implements Serializable{
 	
 	// a collection must have only get method
 	
+	@JsonIgnore // to resolve the looping error
 	@OneToMany(mappedBy = "client")
 	private List<Order> orders = new ArrayList<>(); 
 	
