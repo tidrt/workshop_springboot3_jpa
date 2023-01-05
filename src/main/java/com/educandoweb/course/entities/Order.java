@@ -102,6 +102,14 @@ public class Order implements Serializable {
 		return items;
 	}
 	
+	public Double getTotal() {
+		double sum = 0.0;
+		for(OrderItem x : items) {
+			sum += x.getSubTotal();
+		}
+		return sum;
+	}
+	
 	// hash code to compare one object with another just with id 
 	@Override
 	public int hashCode() {

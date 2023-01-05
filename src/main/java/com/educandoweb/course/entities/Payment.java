@@ -28,6 +28,7 @@ public class Payment implements Serializable{
 	
 	@OneToOne
 	@MapsId // we need to put that on the dependent class
+	@JsonIgnore
 	private Order order; 
 	
 	public Payment() {
